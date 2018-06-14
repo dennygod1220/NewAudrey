@@ -1,0 +1,39 @@
+ @layout('layout/auth/main') 
+ @section('content') 
+ @if(old('notification'))
+    <div class="alert alert-danger">
+        {{ old('notification') }}
+    </div>
+@endif
+ @if(old('notificationSU'))
+    <div class="alert alert-success">
+        {{ old('notificationSU') }}
+    </div>
+@endif
+ <div style="height:50px"></div>
+<a href="/AudreySP/addSize" class="btn btn-outline-info">新增尺寸</a>
+ <div style="height:50px"></div>
+ 
+    <table class="table table-bordered table-hover " style="text-align:center;" id="tbl">
+  <thead class="thead-dark">
+    <tr>
+    <th scope="col">ID</th>    
+    <th scope="col">尺寸</th>    
+    <th scope="col"></th>    
+
+    </tr>
+  </thead>
+  <tbody>
+    @each(sizeinfo in sizeinfo)
+    <tr>
+      <td>{{sizeinfo.id}}</td>
+      <td>{{sizeinfo.size}}</td>
+
+
+      <td><a href="/AudreySP/delSize/{{sizeinfo.id}}" class="btn btn-outline-danger">刪除</a> </td>
+    </tr>
+    @endeach
+  </tbody>
+</table>
+
+ @endsection
