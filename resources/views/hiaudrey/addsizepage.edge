@@ -1,16 +1,19 @@
  @layout('layout/auth/main') 
- @section('content') 
+ @section('content')
 
 <div class="container">
-<form action="/AudreySP/addSize/" method="POST" id="addsizeform">
-    {{ csrfField() }} 
+    <form action="/AudreySP/addSize/" method="POST" id="addsizeform">
+        {{ csrfField() }}
 
-    <div class="form-group">
-        <label>請輸入新增的尺寸:</label>
-        <input type="text" name="size" id="in_size" class="form-control">
-    </div>
-    <button type="submit" class="btn btn-outline-success">送出</button>
+        <div style="height:30px"></div>
+        <div class="form-group">
+            <label>請輸入新增的尺寸:</label>
+            <input type="text" name="size" id="in_size" class="form-control">
+        </div>
 
-</form>
+        <div class="btn-block" style="text-align:center">
+            <button type="submit" class="btn btn-outline-success">送出</button>
+        </div>
+    </form>
 </div>
 @endsection
